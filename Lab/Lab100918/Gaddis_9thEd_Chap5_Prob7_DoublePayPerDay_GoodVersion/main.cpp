@@ -3,6 +3,8 @@
  * Author: Dr. Mark E. Lehr
  * Created on October 9th, 2018, 12:00 PM
  * Purpose:  Double Pay each Day
+ *           casting pennies to dollars and cents
+ *           No double data type used
  */
 
 //System Libraries Here
@@ -31,17 +33,18 @@ int main(int argc, char** argv) {
     cout<<"Your pay is doubled each day "<<endl;
     cout<<"starting with a penny"<<endl;
     
-    //Process/Calculations Here
-    cout<<fixed<<setprecision(2)<<showpoint;
+    //How to do Dollars then Cents
     for(unsigned int day=1,pennies=1;day<=nDays;day++,pennies*=2){
         totPay+=pennies;
+        //First output the dollars with a period
         cout<<"Day "<<setw(2)<<day<<" Pay = $"
                 <<setw(8)<<pennies/CNVPDOL<<".";
+        //Now take care of the cents
         if(pennies%CNVPDOL<10)cout<<"0"<<pennies%CNVPDOL<<endl;
         else cout<<pennies%CNVPDOL<<endl;
     }
     
-    //The random number set
+    //Again dollars with a division and cents with a mod operator
     cout<<"Total Pay  = $"<<totPay/CNVPDOL<<".";
     if(totPay%CNVPDOL<10)cout<<"0"<<totPay%CNVPDOL<<endl;
         else cout<<totPay%CNVPDOL<<endl;

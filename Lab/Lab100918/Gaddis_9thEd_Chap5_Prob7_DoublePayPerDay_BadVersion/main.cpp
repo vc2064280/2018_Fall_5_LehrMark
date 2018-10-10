@@ -3,6 +3,7 @@
  * Author: Dr. Mark E. Lehr
  * Created on October 9th, 2018, 12:00 PM
  * Purpose:  Double Pay each Day
+ *           using a statically cast double for output
  */
 
 //System Libraries Here
@@ -34,12 +35,13 @@ int main(int argc, char** argv) {
     //Process/Calculations Here
     cout<<fixed<<setprecision(2)<<showpoint;
     for(unsigned int day=1,pennies=1;day<=nDays;day++,pennies*=2){
-        totPay+=pennies;
+        totPay+=pennies;  //Sum each payday
+        //Cast pennies to doubles since 10 Significant Digits > 7 SD float
         cout<<"Day "<<setw(2)<<day<<" Pay = $"
                 <<setw(11)<<static_cast<double>(pennies)/CNVPDOL<<endl;
     }
     
-    //The random number set
+    //Total pay is the sum of each pay day
     cout<<"Total Pay  = $"<<static_cast<double>(totPay)/CNVPDOL<<endl;
 
     //Exit
