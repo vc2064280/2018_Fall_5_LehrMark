@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     float vTerm=1;//Value of successive terms
     
     //Input or initialize values Here
-    nTerms=10;//Calculate the first 5 terms in the sequence
+    nTerms=10;//Calculate the first 10 terms in the sequence
     for(int term=1;term<=nTerms;term++){
         vTerm*=x/term;
         etox+=vTerm;
