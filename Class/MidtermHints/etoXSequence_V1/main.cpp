@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
     float x=1;//x is the power of e^x
     
     //Input or initialize values Here
-    nTerms=10;//Calculate the first 5 terms in the sequence
+    nTerms=10;//Calculate the first 10 terms in the sequence
     for(int term=1;term<=nTerms;term++){
         int fact=1;
         for(int i=1;i<=term;i++){
